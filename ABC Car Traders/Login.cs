@@ -23,5 +23,10 @@ namespace ABC_Car_Traders
             form1.Show();
             this.Hide();
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
