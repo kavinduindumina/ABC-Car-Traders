@@ -192,6 +192,7 @@
             Loginbtn.Size = new Size(198, 43);
             Loginbtn.TabIndex = 8;
             Loginbtn.Text = "Sign in";
+            Loginbtn.Click += Loginbtn_Click;
             // 
             // guna2HtmlLabel6
             // 

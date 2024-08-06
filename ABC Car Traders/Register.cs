@@ -67,6 +67,14 @@ namespace ABC_Car_Traders
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Customer Added Successfully");
                 Con.Close();
+
+
+                // Clear the TextBox fields after successful registration
+                FirstNametxt.Text = "";
+                LastNametxt.Text = "";
+                Emailtxt.Text = "";
+                Passwordtxt.Text = "";
+
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
