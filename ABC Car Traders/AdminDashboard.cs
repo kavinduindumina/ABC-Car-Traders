@@ -60,8 +60,8 @@ namespace ABC_Car_Traders
         private void CustomerPnl_Paint(object sender, PaintEventArgs e)
         {
             customerControl1.BringToFront();
-           
-            
+
+
 
         }
 
@@ -73,6 +73,21 @@ namespace ABC_Car_Traders
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
         {
             carControl1.BringToFront();
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+            carPartsControl1.BringToFront();
+        }
+
+        private void guna2GradientPanel3_Paint(object sender, PaintEventArgs e)
+        {
+            carPartsControl1.BringToFront();
+        }
+
+        private void carPartsControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

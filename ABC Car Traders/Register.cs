@@ -65,7 +65,7 @@ namespace ABC_Car_Traders
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@PasswordHash", passwordHash);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Added Successfully");
+                MessageBox.Show("Customer Registration Successfully");
                 Con.Close();
 
 

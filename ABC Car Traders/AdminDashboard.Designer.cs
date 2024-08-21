@@ -84,6 +84,7 @@
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             customerControl1 = new CustomerControl();
             carControl1 = new CarControl();
+            carPartsControl1 = new CarPartsControl();
             guna2CustomGradientPanel1.SuspendLayout();
             guna2GradientPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -297,6 +298,7 @@
             guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2GradientPanel3.Size = new Size(249, 51);
             guna2GradientPanel3.TabIndex = 10;
+            guna2GradientPanel3.Paint += guna2GradientPanel3_Paint;
             // 
             // guna2HtmlLabel4
             // 
@@ -307,6 +309,7 @@
             guna2HtmlLabel4.Size = new Size(72, 25);
             guna2HtmlLabel4.TabIndex = 8;
             guna2HtmlLabel4.Text = "Car Parts";
+            guna2HtmlLabel4.Click += guna2HtmlLabel4_Click;
             // 
             // guna2PictureBox5
             // 
@@ -419,16 +422,26 @@
             // 
             // carControl1
             // 
+            carControl1.BackgroundImageLayout = ImageLayout.Stretch;
             carControl1.Location = new Point(248, 42);
             carControl1.Name = "carControl1";
             carControl1.Size = new Size(703, 608);
             carControl1.TabIndex = 8;
+            // 
+            // carPartsControl1
+            // 
+            carPartsControl1.Location = new Point(249, 42);
+            carPartsControl1.Name = "carPartsControl1";
+            carPartsControl1.Size = new Size(706, 611);
+            carPartsControl1.TabIndex = 9;
+            carPartsControl1.Load += carPartsControl1_Load;
             // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(950, 650);
+            Controls.Add(carPartsControl1);
             Controls.Add(carControl1);
             Controls.Add(customerControl1);
             Controls.Add(guna2CustomGradientPanel2);
@@ -490,5 +503,6 @@
         private Panel panel1;
         private CustomerControl customerControl1;
         private CarControl carControl1;
+        private CarPartsControl carPartsControl1;
     }
 }
