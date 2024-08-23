@@ -123,7 +123,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
             Name = "UserHomeControl";
-            Size = new Size(741, 367);
+            Size = new Size(720, 346);
             ResumeLayout(false);
             PerformLayout();
         }

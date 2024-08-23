@@ -40,5 +40,15 @@ namespace ABC_Car_Traders
         {
             Application.Exit();
         }
+
+        private void Homebtn_Click(object sender, EventArgs e)
+        {
+            userHomeControl1.BringToFront();
+        }
+
+        private void Vehiclebtn_Click(object sender, EventArgs e)
+        {
+            userVehicleControl2.BringToFront();
+        }
     }
 }
