@@ -51,7 +51,6 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             panel1 = new Panel();
-            userHomeControl1 = new UserHomeControl();
             btnLogout = new Guna.UI2.WinForms.Guna2Button();
             userImg = new Guna.UI2.WinForms.Guna2Button();
             cartbtn = new Guna.UI2.WinForms.Guna2Button();
@@ -59,7 +58,9 @@
             partsbtn = new Guna.UI2.WinForms.Guna2Button();
             Vehiclebtn = new Guna.UI2.WinForms.Guna2Button();
             Homebtn = new Guna.UI2.WinForms.Guna2Button();
+            userHomeControl1 = new UserHomeControl();
             userVehicleControl2 = new UserVehicleControl();
+            userVehiclePartControl1 = new UserVehiclePartControl();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -121,14 +122,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(951, 98);
             panel1.TabIndex = 6;
-            // 
-            // userHomeControl1
-            // 
-            userHomeControl1.AutoScroll = true;
-            userHomeControl1.Location = new Point(-1, 93);
-            userHomeControl1.Name = "userHomeControl1";
-            userHomeControl1.Size = new Size(951, 556);
-            userHomeControl1.TabIndex = 7;
             // 
             // btnLogout
             // 
@@ -238,6 +231,7 @@
             partsbtn.Size = new Size(151, 35);
             partsbtn.TabIndex = 9;
             partsbtn.Text = "Parts";
+            partsbtn.Click += partsbtn_Click;
             // 
             // Vehiclebtn
             // 
@@ -287,12 +281,28 @@
             Homebtn.Text = "Home";
             Homebtn.Click += Homebtn_Click;
             // 
+            // userHomeControl1
+            // 
+            userHomeControl1.AutoScroll = true;
+            userHomeControl1.Location = new Point(-1, 117);
+            userHomeControl1.Name = "userHomeControl1";
+            userHomeControl1.Size = new Size(951, 532);
+            userHomeControl1.TabIndex = 7;
+            // 
             // userVehicleControl2
             // 
-            userVehicleControl2.Location = new Point(-1, 93);
+            userVehicleControl2.Location = new Point(-1, 117);
             userVehicleControl2.Name = "userVehicleControl2";
-            userVehicleControl2.Size = new Size(951, 559);
+            userVehicleControl2.Size = new Size(951, 535);
             userVehicleControl2.TabIndex = 8;
+            // 
+            // userVehiclePartControl1
+            // 
+            userVehiclePartControl1.AutoScroll = true;
+            userVehiclePartControl1.Location = new Point(-1, 93);
+            userVehiclePartControl1.Name = "userVehiclePartControl1";
+            userVehiclePartControl1.Size = new Size(953, 556);
+            userVehiclePartControl1.TabIndex = 9;
             // 
             // Home
             // 
@@ -302,6 +312,7 @@
             Controls.Add(panel1);
             Controls.Add(userVehicleControl2);
             Controls.Add(userHomeControl1);
+            Controls.Add(userVehiclePartControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
@@ -328,5 +339,6 @@
         private Guna.UI2.WinForms.Guna2Button Homebtn;
         private UserHomeControl userHomeControl1;
         private UserVehicleControl userVehicleControl2;
+        private UserVehiclePartControl userVehiclePartControl1;
     }
 }

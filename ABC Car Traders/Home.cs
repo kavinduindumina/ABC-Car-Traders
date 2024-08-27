@@ -50,5 +50,10 @@ namespace ABC_Car_Traders
         {
             userVehicleControl2.BringToFront();
         }
+
+        private void partsbtn_Click(object sender, EventArgs e)
+        {
+            userVehiclePartControl1.BringToFront();
+        }
     }
 }
