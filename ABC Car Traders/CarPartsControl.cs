@@ -213,6 +213,8 @@ namespace ABC_Car_Traders
             }
         }
 
+
+        // Search Parts
         private void SearchButton_Click(object sender, EventArgs e)
         {
             SearchPartByName(PartNametxt.Text);

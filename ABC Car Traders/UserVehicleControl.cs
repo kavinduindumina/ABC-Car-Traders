@@ -87,5 +87,79 @@ namespace ABC_Car_Traders
         {
 
         }
+
+
+        // Search Vehicle by name
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            SearchCarByName(CarNametxt.Text);
+        }
+
+        private void SearchCarByName(string carName)
+        {
+            if (!string.IsNullOrEmpty(carName))
+            {
+                try
+                {
+                    Con.Open();
+                    using (SqlCommand command = new SqlCommand("SELECT CarID, CarName, CarModel, Quantity, Price, CarImage FROM CarDetails WHERE CarName = @CarName", Con))
+                    {
+                        command.Parameters.AddWithValue("@CarName", carName);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                CarIdtxt.Text = reader["CarID"].ToString();
+                                CarNametxt.Text = reader["CarName"].ToString();
+                                CarModeltxt.Text = reader["CarModel"].ToString();
+                                Quantitytxt.Value = Convert.ToDecimal(reader["Quantity"]);
+                                Pricetxt.Value = Convert.ToDecimal(reader["Price"]);
+
+                                if (reader["CarImage"] != DBNull.Value)
+                                {
+                                    byte[] imageData = (byte[])reader["CarImage"];
+                                    using (MemoryStream ms = new MemoryStream(imageData))
+                                    {
+                                        PictureBox1.Image = Image.FromStream(ms);
+                                    }
+                                }
+                                else
+                                {
+                                    PictureBox1.Image = null;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No car found with the provided name.");
+                                ClearFields();
+                            }
+                        }
+                    }
+                    Con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    if (Con.State == ConnectionState.Open)
+                    {
+                        Con.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a car name to search.");
+            }
+        }
+
+        // clear field method
+
+        private void ClearFields()
+        {
+            
+            CarNametxt.Text = "";
+            
+        }
     }
 }

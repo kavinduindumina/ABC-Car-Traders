@@ -284,22 +284,22 @@
             // userHomeControl1
             // 
             userHomeControl1.AutoScroll = true;
-            userHomeControl1.Location = new Point(-1, 117);
+            userHomeControl1.Location = new Point(1, 96);
             userHomeControl1.Name = "userHomeControl1";
-            userHomeControl1.Size = new Size(951, 532);
+            userHomeControl1.Size = new Size(951, 553);
             userHomeControl1.TabIndex = 7;
             // 
             // userVehicleControl2
             // 
-            userVehicleControl2.Location = new Point(-1, 117);
+            userVehicleControl2.Location = new Point(-1, 96);
             userVehicleControl2.Name = "userVehicleControl2";
-            userVehicleControl2.Size = new Size(951, 535);
+            userVehicleControl2.Size = new Size(951, 553);
             userVehicleControl2.TabIndex = 8;
             // 
             // userVehiclePartControl1
             // 
             userVehiclePartControl1.AutoScroll = true;
-            userVehiclePartControl1.Location = new Point(-1, 93);
+            userVehiclePartControl1.Location = new Point(-1, 96);
             userVehiclePartControl1.Name = "userVehiclePartControl1";
             userVehiclePartControl1.Size = new Size(953, 556);
             userVehiclePartControl1.TabIndex = 9;
@@ -310,9 +310,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(950, 650);
             Controls.Add(panel1);
-            Controls.Add(userVehicleControl2);
             Controls.Add(userHomeControl1);
             Controls.Add(userVehiclePartControl1);
+            Controls.Add(userVehicleControl2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;

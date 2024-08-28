@@ -45,6 +45,7 @@
             label2 = new Label();
             orderButton = new Guna.UI2.WinForms.Guna2Button();
             CartButton = new Guna.UI2.WinForms.Guna2ImageButton();
+            partIDLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)partPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -150,12 +151,13 @@
             orderButton.FillColor = Color.Orange;
             orderButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             orderButton.ForeColor = Color.White;
-            orderButton.Location = new Point(69, 254);
+            orderButton.Location = new Point(57, 254);
             orderButton.Name = "orderButton";
             orderButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
             orderButton.Size = new Size(86, 28);
             orderButton.TabIndex = 18;
-            orderButton.Text = "Order";
+            orderButton.Text = "View";
+            orderButton.Click += orderButton_Click_1;
             // 
             // CartButton
             // 
@@ -174,6 +176,15 @@
             CartButton.TabIndex = 19;
             CartButton.Click += CartButton_Click;
             // 
+            // partIDLabel
+            // 
+            partIDLabel.BackColor = Color.Transparent;
+            partIDLabel.Location = new Point(92, 100);
+            partIDLabel.Name = "partIDLabel";
+            partIDLabel.Size = new Size(31, 22);
+            partIDLabel.TabIndex = 20;
+            partIDLabel.Text = "Alto";
+            // 
             // UserCarPartControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -189,6 +200,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(partPictureBox);
+            Controls.Add(partIDLabel);
             Name = "UserCarPartControl";
             Size = new Size(217, 291);
             ((System.ComponentModel.ISupportInitialize)partPictureBox).EndInit();
@@ -209,5 +221,6 @@
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button orderButton;
         private Guna.UI2.WinForms.Guna2ImageButton CartButton;
+        private Guna.UI2.WinForms.Guna2HtmlLabel partIDLabel;
     }
 }

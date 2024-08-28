@@ -15,7 +15,16 @@ namespace ABC_Car_Traders
     {
         private SqlConnection Con = new SqlConnection(@"Data Source=KGK;Initial Catalog=ABC_Car_Traders;Integrated Security=True;Encrypt=False");
 
+        // Declare the instance of ViewForm at the class level (only once)
+        private ViewForm viewFormInstance;
+
         // Properties to hold car details
+        public string CarID
+        {
+            get { return carIDLabel.Text; }
+            set { carIDLabel.Text = value; }
+        }
+
         public string CarName
         {
             get { return carNameLabel.Text; }
@@ -46,27 +55,37 @@ namespace ABC_Car_Traders
             set { carPictureBox.Image = value; }
         }
 
-
-
         public UserCarItemControl()
         {
             InitializeComponent();
+            // Subscribe to the Click event if it is not done in the designer
+            // orderButton.Click += orderButton_Click; // Uncomment if needed
         }
-
 
         private void UserCarItemControl_Load(object sender, EventArgs e)
         {
-
+            // Load event logic if needed
         }
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{CarModel} {CarName}  ordered successfully!");
+            // Check if the ViewForm instance already exists and is not disposed
+            if (viewFormInstance == null || viewFormInstance.IsDisposed)
+            {
+                // Create a new instance of ViewForm with the necessary parameters
+                viewFormInstance = new ViewForm(CarID, CarName, CarModel, Quantity, Price, CarImage);
+                viewFormInstance.Show();
+            }
+            else
+            {
+                // If the instance already exists, bring it to the front
+                viewFormInstance.BringToFront();
+            }
         }
 
         private void CartButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{CarModel} {CarName}  added to cart successfully!");
+            MessageBox.Show($"{CarModel} {CarName} added to cart successfully!");
         }
     }
 }

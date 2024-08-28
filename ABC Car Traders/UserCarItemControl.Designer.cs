@@ -45,6 +45,7 @@
             modelLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             qtyLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             priceLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            carIDLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)carPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -130,12 +131,12 @@
             orderButton.FillColor = Color.Orange;
             orderButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             orderButton.ForeColor = Color.White;
-            orderButton.Location = new Point(49, 253);
+            orderButton.Location = new Point(58, 253);
             orderButton.Name = "orderButton";
             orderButton.ShadowDecoration.CustomizableEdges = customizableEdges5;
             orderButton.Size = new Size(86, 28);
             orderButton.TabIndex = 6;
-            orderButton.Text = "Order";
+            orderButton.Text = "View";
             orderButton.Click += orderButton_Click;
             // 
             // carNameLabel
@@ -174,6 +175,15 @@
             priceLabel.TabIndex = 10;
             priceLabel.Text = "3,000,000";
             // 
+            // carIDLabel
+            // 
+            carIDLabel.BackColor = Color.Transparent;
+            carIDLabel.Location = new Point(90, 109);
+            carIDLabel.Name = "carIDLabel";
+            carIDLabel.Size = new Size(31, 22);
+            carIDLabel.TabIndex = 11;
+            carIDLabel.Text = "Alto";
+            // 
             // UserCarItemControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -189,6 +199,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(carPictureBox);
+            Controls.Add(carIDLabel);
             Name = "UserCarItemControl";
             Size = new Size(217, 291);
             Load += UserCarItemControl_Load;
@@ -210,5 +221,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel modelLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel qtyLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel priceLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel carIDLabel;
     }
 }

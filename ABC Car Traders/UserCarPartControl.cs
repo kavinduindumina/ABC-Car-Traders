@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ABC_Car_Traders
 {
@@ -15,8 +16,15 @@ namespace ABC_Car_Traders
     {
         private SqlConnection Con = new SqlConnection(@"Data Source=KGK;Initial Catalog=ABC_Car_Traders;Integrated Security=True;Encrypt=False");
 
+        private PartViewForm PartviewFormInstance;
 
         // Properties to hold car details
+
+        public string PartID
+        {
+            get { return partIDLabel.Text; }
+            set { partIDLabel.Text = value; }
+        }
         public string PartName
         {
             get { return partNameLabel.Text; }
@@ -51,14 +59,32 @@ namespace ABC_Car_Traders
             InitializeComponent();
         }
 
+
         private void orderButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{PartModel} {PartName}  ordered successfully!");
+            // below order button is used
+            
         }
 
         private void CartButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{PartModel} {PartName}  added to cart successfully!");
+        }
+
+        private void orderButton_Click_1(object sender, EventArgs e)
+        {
+            // Check if the ViewForm instance already exists and is not disposed
+            if (PartviewFormInstance == null || PartviewFormInstance.IsDisposed)
+            {
+                // Create a new instance of ViewForm with the necessary parameters
+                PartviewFormInstance = new PartViewForm(PartID, PartName, PartModel, Quantity, Price, CarImage);
+                PartviewFormInstance.Show();
+            }
+            else
+            {
+                // If the instance already exists, bring it to the front
+                PartviewFormInstance.BringToFront();
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ABC_Car_Traders
             try
             {
                 Con.Open();
-                string query = "SELECT PartID, PartName, PartModel, Quantity, Price, PartImage FROM CarParts"; 
+                string query = "SELECT PartID, PartName, PartModel, Quantity, Price, PartImage FROM CarParts";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -36,7 +36,7 @@ namespace ABC_Car_Traders
                     MessageBox.Show("No car details found in the database.");
                     reader.Close();
                     Con.Close();
-                    return; 
+                    return;
                 }
 
                 while (reader.Read())
@@ -82,6 +82,80 @@ namespace ABC_Car_Traders
                     Con.Close();
                 }
             }
+        }
+
+
+        // Serach parts
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            SearchPartByName(PartNametxt.Text);
+        }
+
+        private void SearchPartByName(string PartName)
+        {
+            if (!string.IsNullOrEmpty(PartName))
+            {
+                try
+                {
+                    Con.Open();
+                    using (SqlCommand command = new SqlCommand("SELECT PartID, PartName, PartModel, Quantity, Price, PartImage FROM CarParts WHERE PartName = @PartName", Con))
+                    {
+                        command.Parameters.AddWithValue("@PartName", PartName);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                PartIDtxt.Text = reader["PartID"].ToString();
+                                PartNametxt.Text = reader["PartName"].ToString();
+                                PartModeltxt.Text = reader["PartModel"].ToString();
+                                Quantitytxt.Value = Convert.ToDecimal(reader["Quantity"]);
+                                Pricetxt.Value = Convert.ToDecimal(reader["Price"]);
+
+                                if (reader["PartImage"] != DBNull.Value)
+                                {
+                                    byte[] imageData = (byte[])reader["PartImage"];
+                                    using (MemoryStream ms = new MemoryStream(imageData))
+                                    {
+                                        PartImagePictureBox.Image = Image.FromStream(ms);
+                                    }
+                                }
+                                else
+                                {
+                                    PartImagePictureBox.Image = null;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No part found with the provided name.");
+                                ClearFields();
+                            }
+                        }
+                    }
+                    Con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    if (Con.State == ConnectionState.Open)
+                    {
+                        Con.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a car part name to search.");
+            }
+        }
+
+        // clear field method
+
+        private void ClearFields()
+        {
+
+            PartNametxt.Text = "";
+
         }
     }
 }

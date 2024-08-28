@@ -86,7 +86,7 @@ namespace ABC_Car_Traders
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-           
+
 
         }
 
@@ -150,6 +150,16 @@ namespace ABC_Car_Traders
                     Con.Close();
                 }
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

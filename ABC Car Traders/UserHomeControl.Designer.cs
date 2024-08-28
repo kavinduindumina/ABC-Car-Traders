@@ -92,6 +92,7 @@
             guna2Button1.Size = new Size(129, 26);
             guna2Button1.TabIndex = 7;
             guna2Button1.Text = "View More >>";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
@@ -110,6 +111,7 @@
             guna2Button2.Size = new Size(129, 26);
             guna2Button2.TabIndex = 8;
             guna2Button2.Text = "View More >>";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // UserHomeControl
             // 
@@ -123,7 +125,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
             Name = "UserHomeControl";
-            Size = new Size(720, 346);
+            Size = new Size(815, 390);
             ResumeLayout(false);
             PerformLayout();
         }
