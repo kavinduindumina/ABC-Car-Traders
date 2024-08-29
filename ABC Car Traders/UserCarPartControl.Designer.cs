@@ -179,11 +179,11 @@
             // partIDLabel
             // 
             partIDLabel.BackColor = Color.Transparent;
-            partIDLabel.Location = new Point(92, 100);
+            partIDLabel.Location = new Point(93, 109);
             partIDLabel.Name = "partIDLabel";
-            partIDLabel.Size = new Size(31, 22);
+            partIDLabel.Size = new Size(18, 22);
             partIDLabel.TabIndex = 20;
-            partIDLabel.Text = "Alto";
+            partIDLabel.Text = "ID";
             // 
             // UserCarPartControl
             // 

@@ -166,6 +166,7 @@
             buyButton.Size = new Size(139, 52);
             buyButton.TabIndex = 20;
             buyButton.Text = "Buy Now";
+            buyButton.Click += buyButton_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -184,9 +185,9 @@
             carIDLable.Font = new Font("Microsoft Sans Serif", 12F);
             carIDLable.Location = new Point(155, 148);
             carIDLable.Name = "carIDLable";
-            carIDLable.Size = new Size(37, 27);
+            carIDLable.Size = new Size(22, 27);
             carIDLable.TabIndex = 22;
-            carIDLable.Text = "Alto";
+            carIDLable.Text = "ID";
             // 
             // ViewForm
             // 
@@ -202,9 +203,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(guna2HtmlLabel1);
             Controls.Add(carPictureBox);
             Controls.Add(carIDLable);
-            Controls.Add(guna2HtmlLabel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ViewForm";
             Text = "ViewForm";

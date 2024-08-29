@@ -178,11 +178,11 @@
             // carIDLabel
             // 
             carIDLabel.BackColor = Color.Transparent;
-            carIDLabel.Location = new Point(90, 109);
+            carIDLabel.Location = new Point(91, 101);
             carIDLabel.Name = "carIDLabel";
-            carIDLabel.Size = new Size(31, 22);
+            carIDLabel.Size = new Size(18, 22);
             carIDLabel.TabIndex = 11;
-            carIDLabel.Text = "Alto";
+            carIDLabel.Text = "ID";
             // 
             // UserCarItemControl
             // 

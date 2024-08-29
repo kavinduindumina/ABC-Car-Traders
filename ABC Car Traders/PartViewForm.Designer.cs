@@ -84,6 +84,7 @@
             buyButton.Size = new Size(139, 52);
             buyButton.TabIndex = 32;
             buyButton.Text = "Buy Now";
+            buyButton.Click += buyButton_Click;
             // 
             // priceLabel
             // 
@@ -182,11 +183,11 @@
             // 
             partIDLable.BackColor = Color.Transparent;
             partIDLable.Font = new Font("Microsoft Sans Serif", 12F);
-            partIDLable.Location = new Point(157, 155);
+            partIDLable.Location = new Point(160, 154);
             partIDLable.Name = "partIDLable";
-            partIDLable.Size = new Size(37, 27);
+            partIDLable.Size = new Size(22, 27);
             partIDLable.TabIndex = 33;
-            partIDLable.Text = "Alto";
+            partIDLable.Text = "ID";
             // 
             // PartViewForm
             // 
@@ -203,8 +204,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(guna2HtmlLabel1);
-            Controls.Add(carPictureBox);
             Controls.Add(partIDLable);
+            Controls.Add(carPictureBox);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PartViewForm";
             Text = "PartViewForm";

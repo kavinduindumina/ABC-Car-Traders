@@ -1,12 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ABC_Car_Traders
@@ -18,11 +13,24 @@ namespace ABC_Car_Traders
         // Declare the instance of ViewForm at the class level (only once)
         private ViewForm viewFormInstance;
 
-        // Properties to hold car details
-        public string CarID
+        public int CarID
         {
-            get { return carIDLabel.Text; }
-            set { carIDLabel.Text = value; }
+            get
+            {
+                if (int.TryParse(carIDLabel.Text, out int result))
+                {
+                    return result;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Car ID");
+                    return 0; // Default value or handle appropriately
+                }
+            }
+            set
+            {
+                carIDLabel.Text = value.ToString();
+            }
         }
 
         public string CarName
@@ -43,10 +51,23 @@ namespace ABC_Car_Traders
             set { qtyLabel.Text = value; }
         }
 
-        public string Price
+        public decimal Price
         {
-            get { return priceLabel.Text; }
-            set { priceLabel.Text = "Rs: " + value; }
+            get
+            {
+                if (decimal.TryParse(priceLabel.Text.Replace("Rs: ", "").Trim(), out decimal result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return 0m;
+                }
+            }
+            set
+            {
+                priceLabel.Text = "Rs: " + value.ToString("N");
+            }
         }
 
         public Image CarImage
@@ -58,8 +79,6 @@ namespace ABC_Car_Traders
         public UserCarItemControl()
         {
             InitializeComponent();
-            // Subscribe to the Click event if it is not done in the designer
-            // orderButton.Click += orderButton_Click; // Uncomment if needed
         }
 
         private void UserCarItemControl_Load(object sender, EventArgs e)
@@ -69,16 +88,13 @@ namespace ABC_Car_Traders
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-            // Check if the ViewForm instance already exists and is not disposed
             if (viewFormInstance == null || viewFormInstance.IsDisposed)
             {
-                // Create a new instance of ViewForm with the necessary parameters
                 viewFormInstance = new ViewForm(CarID, CarName, CarModel, Quantity, Price, CarImage);
                 viewFormInstance.Show();
             }
             else
             {
-                // If the instance already exists, bring it to the front
                 viewFormInstance.BringToFront();
             }
         }

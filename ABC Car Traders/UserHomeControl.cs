@@ -45,10 +45,13 @@ namespace ABC_Car_Traders
                     UserCarItemControl carItemControl = new UserCarItemControl();
 
                     // Set properties with database data
+                    carItemControl.CarID = Convert.ToInt32(reader["CarID"]);
                     carItemControl.CarName = reader["CarName"].ToString();
                     carItemControl.CarModel = reader["CarModel"].ToString();
                     carItemControl.Quantity = reader["Quantity"].ToString();
-                    carItemControl.Price = Convert.ToDecimal(reader["Price"]).ToString();
+                    
+                    carItemControl.Price = Convert.ToDecimal(reader["Price"]);
+
 
                     // Debugging: Print or display the fetched data
                     Console.WriteLine($"Loaded Car: {carItemControl.CarName}, Model: {carItemControl.CarModel}, Price: {carItemControl.Price}");
@@ -113,10 +116,13 @@ namespace ABC_Car_Traders
                     UserCarItemControl carItemControl = new UserCarItemControl();
 
                     // Set properties with database data
+                    carItemControl.CarID = Convert.ToInt32(reader["PartID"]);
                     carItemControl.CarName = reader["PartName"].ToString();
                     carItemControl.CarModel = reader["PartModel"].ToString();
                     carItemControl.Quantity = reader["Quantity"].ToString();
-                    carItemControl.Price = Convert.ToDecimal(reader["Price"]).ToString();
+             
+                    carItemControl.Price = Convert.ToDecimal(reader["Price"]);
+
 
                     // Debugging: Print or display the fetched data
                     Console.WriteLine($"Loaded Car: {carItemControl.CarName}, Model: {carItemControl.CarModel}, Price: {carItemControl.Price}");

@@ -20,10 +20,25 @@ namespace ABC_Car_Traders
 
         // Properties to hold car details
 
-        public string PartID
+      
+        public int PartID
         {
-            get { return partIDLabel.Text; }
-            set { partIDLabel.Text = value; }
+            get
+            {
+                if (int.TryParse(partIDLabel.Text, out int result))
+                {
+                    return result;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Car ID");
+                    return 0; // Default value or handle appropriately
+                }
+            }
+            set
+            {
+                partIDLabel.Text = value.ToString();
+            }
         }
         public string PartName
         {
@@ -43,10 +58,24 @@ namespace ABC_Car_Traders
             set { qtyLabel.Text = value; }
         }
 
-        public string Price
+      
+        public decimal Price
         {
-            get { return priceLabel.Text; }
-            set { priceLabel.Text = "Rs: " + value; }
+            get
+            {
+                if (decimal.TryParse(priceLabel.Text.Replace("Rs: ", "").Trim(), out decimal result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return 0m;
+                }
+            }
+            set
+            {
+                priceLabel.Text = "Rs: " + value.ToString("N");
+            }
         }
 
         public Image CarImage

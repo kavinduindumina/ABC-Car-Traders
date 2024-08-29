@@ -45,10 +45,11 @@ namespace ABC_Car_Traders
                     UserCarPartControl carPartControl = new UserCarPartControl();
 
                     // Set properties with database data
+                    carPartControl.PartID = Convert.ToInt32(reader["PartID"]);
                     carPartControl.PartName = reader["PartName"].ToString();
                     carPartControl.PartModel = reader["PartModel"].ToString();
                     carPartControl.Quantity = reader["Quantity"].ToString();
-                    carPartControl.Price = Convert.ToDecimal(reader["Price"]).ToString();
+                    carPartControl.Price = Convert.ToDecimal(reader["Price"]);
 
                     // Debugging: Print or display the fetched data
                     Console.WriteLine($"Loaded Part: {carPartControl.PartName}, Model: {carPartControl.PartModel}, Price: {carPartControl.Price}");
@@ -107,6 +108,7 @@ namespace ABC_Car_Traders
                             if (reader.Read())
                             {
                                 PartIDtxt.Text = reader["PartID"].ToString();
+
                                 PartNametxt.Text = reader["PartName"].ToString();
                                 PartModeltxt.Text = reader["PartModel"].ToString();
                                 Quantitytxt.Value = Convert.ToDecimal(reader["Quantity"]);

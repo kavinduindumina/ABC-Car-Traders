@@ -10,5 +10,7 @@ namespace ABC_Car_Traders
     {
         public static string LoggedInEmail { get; set; }
         public static bool IsAdmin { get; set; }
+
+
     }
 }
