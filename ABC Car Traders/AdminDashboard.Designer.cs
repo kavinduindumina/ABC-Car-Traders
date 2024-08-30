@@ -85,6 +85,8 @@
             customerControl1 = new CustomerControl();
             carControl1 = new CarControl();
             carPartsControl1 = new CarPartsControl();
+            orderControl1 = new OrderControl();
+            reportControl1 = new ReportControl();
             guna2CustomGradientPanel1.SuspendLayout();
             guna2GradientPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -192,6 +194,7 @@
             guna2HtmlLabel6.Size = new Size(62, 25);
             guna2HtmlLabel6.TabIndex = 8;
             guna2HtmlLabel6.Text = "Reports";
+            guna2HtmlLabel6.Click += guna2HtmlLabel6_Click;
             // 
             // guna2PictureBox1
             // 
@@ -220,6 +223,7 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GradientPanel1.Size = new Size(249, 51);
             guna2GradientPanel1.TabIndex = 12;
+            guna2GradientPanel1.Paint += guna2GradientPanel1_Paint_1;
             // 
             // guna2HtmlLabel2
             // 
@@ -230,6 +234,7 @@
             guna2HtmlLabel2.Size = new Size(54, 25);
             guna2HtmlLabel2.TabIndex = 8;
             guna2HtmlLabel2.Text = "Orders";
+            guna2HtmlLabel2.Click += guna2HtmlLabel2_Click;
             // 
             // guna2PictureBox3
             // 
@@ -436,6 +441,21 @@
             carPartsControl1.TabIndex = 9;
             carPartsControl1.Load += carPartsControl1_Load;
             // 
+            // orderControl1
+            // 
+            orderControl1.Location = new Point(247, 42);
+            orderControl1.Name = "orderControl1";
+            orderControl1.Size = new Size(704, 608);
+            orderControl1.TabIndex = 10;
+            // 
+            // reportControl1
+            // 
+            reportControl1.BackColor = Color.Moccasin;
+            reportControl1.Location = new Point(247, 42);
+            reportControl1.Name = "reportControl1";
+            reportControl1.Size = new Size(704, 608);
+            reportControl1.TabIndex = 11;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -446,6 +466,8 @@
             Controls.Add(customerControl1);
             Controls.Add(guna2CustomGradientPanel2);
             Controls.Add(guna2CustomGradientPanel1);
+            Controls.Add(orderControl1);
+            Controls.Add(reportControl1);
             Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminDashboard";
@@ -504,5 +526,7 @@
         private CustomerControl customerControl1;
         private CarControl carControl1;
         private CarPartsControl carPartsControl1;
+        private OrderControl orderControl1;
+        private ReportControl reportControl1;
     }
 }

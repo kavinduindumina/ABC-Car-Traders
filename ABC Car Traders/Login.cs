@@ -40,11 +40,9 @@ namespace ABC_Car_Traders
             // Check if admin
             if (email == "admin@abc.com" && password == "Admin")
             {
-
                 // Set session
                 SessionManager.LoggedInEmail = email;
                 SessionManager.IsAdmin = true;
-
 
                 // Redirect to admin dashboard
                 AdminDashboard adminDashboard = new AdminDashboard();
@@ -57,44 +55,50 @@ namespace ABC_Car_Traders
             try
             {
                 Con.Open();
-                string query = "SELECT PasswordHash FROM Customers WHERE Email = @Email";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.Parameters.AddWithValue("@Email", email);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                string query = "SELECT [Id], [FirstName], [LastName], [Email], [PasswordHash] FROM [Customers] WHERE [Email] = @Email";
+                using (SqlCommand cmd = new SqlCommand(query, Con))
                 {
-                    string storedPasswordHash = reader["PasswordHash"].ToString();
-
-                    if (BCrypt.Net.BCrypt.Verify(password, storedPasswordHash))
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
+                        if (reader.Read())
+                        {
+                            string storedPasswordHash = reader["PasswordHash"].ToString();
 
-                        // Set session
-                        SessionManager.LoggedInEmail = email;
-                        SessionManager.IsAdmin = false;
+                            if (BCrypt.Net.BCrypt.Verify(password, storedPasswordHash))
+                            {
+                                // Retrieve and set customer details
+                                int customerId = reader.GetInt32(reader.GetOrdinal("Id"));
+                                string firstName = reader["FirstName"].ToString();
+                                string lastName = reader["LastName"].ToString();
+                                string loggedInEmail = reader["Email"].ToString();
 
+                                // Set session details
+                                SessionManager.SetCustomerDetails(customerId.ToString(), firstName, lastName, loggedInEmail, false);
 
-                        // Redirect to home page
-                        Home home = new Home();
-                        home.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid email or password.");
+                                // Redirect to home page
+                                Home home = new Home();
+                                home.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid email or password.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid email or password.");
+                        }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid email or password.");
-                }
-
-                reader.Close();
-                Con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
                 if (Con.State == System.Data.ConnectionState.Open)
                 {
                     Con.Close();

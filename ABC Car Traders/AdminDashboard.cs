@@ -89,5 +89,20 @@ namespace ABC_Car_Traders
         {
 
         }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+            orderControl1.BringToFront();
+        }
+
+        private void guna2GradientPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            orderControl1.BringToFront();
+        }
+
+        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
+        {
+            reportControl1.BringToFront();
+        }
     }
 }

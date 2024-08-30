@@ -61,6 +61,7 @@
             userHomeControl1 = new UserHomeControl();
             userVehicleControl2 = new UserVehicleControl();
             userVehiclePartControl1 = new UserVehiclePartControl();
+            userOrderControl1 = new UserOrderControl();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -208,6 +209,7 @@
             Orderbtn.Size = new Size(151, 35);
             Orderbtn.TabIndex = 10;
             Orderbtn.Text = "Orders";
+            Orderbtn.Click += Orderbtn_Click;
             // 
             // partsbtn
             // 
@@ -304,6 +306,13 @@
             userVehiclePartControl1.Size = new Size(953, 556);
             userVehiclePartControl1.TabIndex = 9;
             // 
+            // userOrderControl1
+            // 
+            userOrderControl1.Location = new Point(-1, 96);
+            userOrderControl1.Name = "userOrderControl1";
+            userOrderControl1.Size = new Size(953, 553);
+            userOrderControl1.TabIndex = 14;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -313,6 +322,7 @@
             Controls.Add(userHomeControl1);
             Controls.Add(userVehiclePartControl1);
             Controls.Add(userVehicleControl2);
+            Controls.Add(userOrderControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
@@ -340,5 +350,6 @@
         private UserHomeControl userHomeControl1;
         private UserVehicleControl userVehicleControl2;
         private UserVehiclePartControl userVehiclePartControl1;
+        private UserOrderControl userOrderControl1;
     }
 }

@@ -55,6 +55,12 @@ namespace ABC_Car_Traders
         {
 
 
+            // Retrieve logged customer details from SessionManager
+            customerID = SessionManager.CustomerID;
+            firstName = SessionManager.FirstName;
+            lastName = SessionManager.LastName;
+
+            // Set customer details in controls
             customerIdtxt.Text = customerID;
             FirstNametxt.Text = firstName;
             LastNametxt.Text = lastName;
@@ -84,17 +90,19 @@ namespace ABC_Car_Traders
             // Corrected parsing from string to decimal
             decimal totalPrice = decimal.Parse(totalLable.Text.Replace(",", ""));
 
-            string query = "INSERT INTO Orders (CarID, Id, Address, MobileNumber, CreatedAt, UpdatedAt, Status) VALUES (@CarID, @CustomerID, @Address, @MobileNumber, @CreatedAt, @UpdatedAt, @Status)";
+            string query = "INSERT INTO Orders (ItemID, Id, Address, MobileNumber, CreatedAt, UpdatedAt, Status, Total, Quantity) VALUES (@ItemID, @CustomerID, @Address, @MobileNumber, @CreatedAt, @UpdatedAt, @Status, @Total, @Quantity)";
 
             using (SqlCommand cmd = new SqlCommand(query, Con))
             {
-                cmd.Parameters.AddWithValue("@CarID", carID);
+                cmd.Parameters.AddWithValue("@ItemID", carID);
                 cmd.Parameters.AddWithValue("@CustomerID", customerID);
                 cmd.Parameters.AddWithValue("@Address", address);
                 cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
                 cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Status", "Inprogress");
+                cmd.Parameters.AddWithValue("@Total", totalPrice);
+                cmd.Parameters.AddWithValue("@Quantity", quantity);
 
                 try
                 {
