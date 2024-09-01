@@ -121,7 +121,7 @@
   <data name="carReportbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAF9GSURBVHhe7d0H
+        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAF9GSURBVHhe7d0H
         mBXl3f9/dhdYelmlSlFBUBF7RewajfokxiiKvWBFxV4R0Igi2I0tKtEoVhQVRcUOioJd8yQxT0mvv3+S
         X57nF5No4v2/73V3c87Z9+75zpk5bc7nvq7XlTic7z3lnpnP7CkzXZxzIiIiUmNwooiIiKQbThQREZF0
         w4kiIiKSbjhRRERE0g0nioiISLrhRBEREUk3nCgiIiLphhNFREQk3XCiiIiIpBtOFBERkXTDiSIiIpJu
@@ -534,7 +534,7 @@
   <data name="orderReportbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEOzSURBVHhe7d13
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEOzSURBVHhe7d13
         nBbV2cbxLLssS1mKSF26oiJFjaKCDRCwICIqIBYUC2LvomIBjYlGE3vXqLFr1Kgpr8b4hoiNoGJINIqo
         xJ76xvSi573P6kaQm2VmzsxzZub8rs/n+0eiTnuenXPtnilfIoQQQgghhBBCCCGEEEIIIYQQQgghhBBC
         CCGEEEIIIYQQQgghaaZGdBJ9xAAUWjfRXhBC1p56Yc99nYX9+en12f+2WglCShU72G8lThGPiF+L/wiD
@@ -830,7 +830,7 @@
   <data name="partReportbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFEUSURBVHhe7d15
+        0QAADdEBwivf4wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFEUSURBVHhe7d15
         lF1VvSfwh4hvdbseyGRAW9unrS6etMij+wkCoijIoCCDICCTIshgQAwQJgfQAEYgBEhIgIQAEQhkBEJC
         BjLPIfNQt+bUnLEqNaRSVcnu364k7d0n3zufYe9zv3981nL9MHfvs8/w+9YdzvkXpRQVsWWbdj26qKpj
         8/yK9j1zy9tUoeT11JqGLrWxqUeVbCYisl67mCvuFoei62RcwSIVh8XVHWtRE8/XmvoudHIREblikfg3

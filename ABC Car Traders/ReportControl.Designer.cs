@@ -65,6 +65,7 @@
             carReportbtn.ShadowDecoration.CustomizableEdges = customizableEdges1;
             carReportbtn.Size = new Size(121, 144);
             carReportbtn.TabIndex = 1;
+            carReportbtn.Click += carReportbtn_Click;
             // 
             // orderReportbtn
             // 

@@ -16,5 +16,14 @@ namespace ABC_Car_Traders
         {
             InitializeComponent();
         }
+
+        private void carReportbtn_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the CarReportForm
+            CarReportForm carReportForm = new CarReportForm();
+
+            // Show the form
+            carReportForm.Show();
+        }
     }
 }

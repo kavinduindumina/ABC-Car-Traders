@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace ABC_Car_Traders
 {
@@ -16,8 +18,9 @@ namespace ABC_Car_Traders
         public Register()
         {
             InitializeComponent();
+            _validator = new CustomerValidator();
         }
-
+        private readonly CustomerValidator _validator;
         SqlConnection Con = new SqlConnection(@"Data Source=KGK;Initial Catalog=ABC_Car_Traders;Integrated Security=True;Encrypt=False");
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
@@ -44,11 +47,23 @@ namespace ABC_Car_Traders
             string email = Emailtxt.Text;
             string password = Passwordtxt.Text;
 
-            // Validate the input
-            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            // Create a Customer instance
+            var customer = new Customer
             {
-                MessageBox.Show("All fields are required.");
+                FirstName = firstName,
+                LastName = lastName,
+                Email = email,
+                Password = password
+            };
+
+            // Validate the input
+            ValidationResult results = _validator.Validate(customer);
+
+            if (!results.IsValid)
+            {
+                // Display validation errors
+                string errors = string.Join(Environment.NewLine, results.Errors.Select(e => e.ErrorMessage));
+                MessageBox.Show(errors);
                 return;
             }
 
