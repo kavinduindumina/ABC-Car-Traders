@@ -41,7 +41,7 @@ namespace ABC_Car_Traders
 
                 while (reader.Read())
                 {
-                    // Create an instance of the UserCarItemControl
+                    
                     UserCarPartControl carPartControl = new UserCarPartControl();
 
                     // Set properties with database data
@@ -68,8 +68,8 @@ namespace ABC_Car_Traders
                         carPartControl.CarImage = null;
                     }
 
-                    // Add the control to a parent container, like a Panel or FlowLayoutPanel
-                    partsLayoutPanel.Controls.Add(carPartControl); // 'flowLayoutPanel1' should be the container you use in your form
+                    
+                    partsLayoutPanel.Controls.Add(carPartControl); 
                 }
 
                 reader.Close();

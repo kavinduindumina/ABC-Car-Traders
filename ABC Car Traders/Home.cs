@@ -60,5 +60,11 @@ namespace ABC_Car_Traders
         {
             userOrderControl1.BringToFront();
         }
+
+        private void userImg_Click(object sender, EventArgs e)
+        {
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.Show();
+        }
     }
 }

@@ -58,6 +58,7 @@ namespace ABC_Car_Traders
             AddCarPart();
         }
 
+        // Add New Car Part
         private void AddCarPart()
         {
             if (PartImagePictureBox.Image != null)

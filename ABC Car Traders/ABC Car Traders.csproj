@@ -34,6 +34,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>carDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Update="DataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,6 +57,10 @@
     <None Update="carDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>carDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

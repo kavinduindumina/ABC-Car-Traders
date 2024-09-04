@@ -285,12 +285,13 @@
             backbtn.FillColor = Color.Transparent;
             backbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             backbtn.ForeColor = Color.Black;
+            backbtn.Image = (Image)resources.GetObject("backbtn.Image");
+            backbtn.ImageSize = new Size(30, 30);
             backbtn.Location = new Point(12, 12);
             backbtn.Name = "backbtn";
             backbtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             backbtn.Size = new Size(50, 50);
             backbtn.TabIndex = 22;
-            backbtn.Text = "<";
             backbtn.Click += backbtn_Click;
             // 
             // Register
