@@ -104,5 +104,11 @@ namespace ABC_Car_Traders
         {
             reportControl1.BringToFront();
         }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+            AddAdminForm addAdminForm = new AddAdminForm();
+            addAdminForm.Show();
+        }
     }
 }

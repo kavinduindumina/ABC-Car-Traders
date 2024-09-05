@@ -18,6 +18,7 @@ namespace ABC_Car_Traders
             InitializeComponent();
             this.Load += new EventHandler(CarPartsControl_Load);
             PartsDataGridView.CellClick += new DataGridViewCellEventHandler(PartsDataGridView_CellContentClick);
+            Pricetxt.Maximum = 10000000; 
 
 
         }

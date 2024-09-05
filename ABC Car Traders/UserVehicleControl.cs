@@ -1,13 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ABC_Car_Traders
 {
@@ -159,9 +151,9 @@ namespace ABC_Car_Traders
 
         private void ClearFields()
         {
-            
+
             CarNametxt.Text = "";
-            
+
         }
     }
 }

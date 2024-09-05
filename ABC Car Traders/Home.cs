@@ -58,7 +58,8 @@ namespace ABC_Car_Traders
 
         private void Orderbtn_Click(object sender, EventArgs e)
         {
-            userOrderControl1.BringToFront();
+            UserOrderControlForm userOrderControlForm = new UserOrderControlForm();
+            userOrderControlForm.Show();
         }
 
         private void userImg_Click(object sender, EventArgs e)

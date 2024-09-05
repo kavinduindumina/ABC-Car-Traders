@@ -41,6 +41,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -54,6 +56,7 @@
             Loginbtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             backbtn = new Guna.UI2.WinForms.Guna2Button();
+            Adminbtn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -226,6 +229,29 @@
             backbtn.TabIndex = 23;
             backbtn.Click += backbtn_Click;
             // 
+            // Adminbtn
+            // 
+            Adminbtn.BackColor = Color.Transparent;
+            Adminbtn.BorderColor = Color.Orange;
+            Adminbtn.BorderRadius = 20;
+            Adminbtn.BorderThickness = 1;
+            Adminbtn.CustomizableEdges = customizableEdges13;
+            Adminbtn.DisabledState.BorderColor = Color.DarkGray;
+            Adminbtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            Adminbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Adminbtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Adminbtn.FillColor = Color.Gold;
+            Adminbtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            Adminbtn.ForeColor = Color.White;
+            Adminbtn.HoverState.FillColor = Color.FromArgb(255, 128, 0);
+            Adminbtn.Location = new Point(159, 462);
+            Adminbtn.Name = "Adminbtn";
+            Adminbtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Adminbtn.Size = new Size(97, 43);
+            Adminbtn.TabIndex = 24;
+            Adminbtn.Text = "Admin";
+            Adminbtn.Click += Adminbtn_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -244,6 +270,7 @@
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2PictureBox1);
+            Controls.Add(Adminbtn);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
@@ -267,5 +294,6 @@
         private Guna.UI2.WinForms.Guna2Button Loginbtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2Button backbtn;
+        private Guna.UI2.WinForms.Guna2Button Adminbtn;
     }
 }

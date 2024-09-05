@@ -20,6 +20,8 @@ namespace ABC_Car_Traders
             this.Load += new EventHandler(CarControl_Load);
             CarDataGridView.CellClick += new DataGridViewCellEventHandler(CarDataGridView_CellContentClick);
             SearchButton.Click += new EventHandler(SearchButton_Click);
+            Pricetxt.Maximum = 10000000; 
+
         }
 
         SqlConnection Con = new SqlConnection(@"Data Source=KGK;Initial Catalog=ABC_Car_Traders;Integrated Security=True;Encrypt=False");

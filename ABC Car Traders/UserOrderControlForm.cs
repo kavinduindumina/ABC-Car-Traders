@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ABC_Car_Traders
 {
-    public partial class UserOrderControl : UserControl
+    public partial class UserOrderControlForm : Form
     {
         private SqlConnection Con = new SqlConnection(@"Data Source=KGK;Initial Catalog=ABC_Car_Traders;Integrated Security=True;Encrypt=False");
 
-        public UserOrderControl()
+        public UserOrderControlForm()
         {
             InitializeComponent();
             LoadCustomerOrders();
@@ -59,11 +59,6 @@ namespace ABC_Car_Traders
         public void RefreshOrders()
         {
             LoadCustomerOrders();
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

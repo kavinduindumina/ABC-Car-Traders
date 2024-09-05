@@ -71,7 +71,7 @@ namespace ABC_Car_Traders
             // Calculate total price when quantity changes
             if (int.TryParse(Qtytxt.Text, out int quantity))
             {
-                decimal totalPrice = price * quantity;
+                decimal totalPrice = (price * quantity);
                 totalLable.Text = totalPrice.ToString("N0"); // Display formatted total price
             }
             else

@@ -38,40 +38,57 @@ namespace ABC_Car_Traders
             string password = Passwordtxt.Text;
 
             // Check if admin
-            if (email == "admin@abc.com" && password == "Admin")
-            {
-                // Set session
-                SessionManager.LoggedInEmail = email;
-                SessionManager.IsAdmin = true;
-
-                // Redirect to admin dashboard
-                AdminDashboard adminDashboard = new AdminDashboard();
-                adminDashboard.Show();
-                this.Hide();
-                return;
-            }
-
-            // Check if customer
             try
             {
                 Con.Open();
-                string query = "SELECT [Id], [FirstName], [LastName], [Email], [PasswordHash] FROM [Customers] WHERE [Email] = @Email";
-                using (SqlCommand cmd = new SqlCommand(query, Con))
+                string adminQuery = "SELECT [AdminId], [Email], [PasswordHash] FROM [Admin] WHERE [Email] = @Email";
+                using (SqlCommand cmdAdmin = new SqlCommand(adminQuery, Con))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    cmdAdmin.Parameters.AddWithValue("@Email", email);
+                    using (SqlDataReader readerAdmin = cmdAdmin.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (readerAdmin.Read())
                         {
-                            string storedPasswordHash = reader["PasswordHash"].ToString();
+                            string storedAdminPasswordHash = readerAdmin["PasswordHash"].ToString();
+                            if (BCrypt.Net.BCrypt.Verify(password, storedAdminPasswordHash))
+                            {
+                                // Set session for admin
+                                int adminId = readerAdmin.GetInt32(readerAdmin.GetOrdinal("AdminId")); // Updated to use "AdminId"
+                                SessionManager.SetCustomerDetails(adminId.ToString(), "Admin", "Admin", email, true);
 
-                            if (BCrypt.Net.BCrypt.Verify(password, storedPasswordHash))
+                                // Redirect to admin dashboard
+                                AdminDashboard adminDashboard = new AdminDashboard();
+                                adminDashboard.Show();
+                                this.Hide();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid email or password.");
+                                return;
+                            }
+                        }
+                    }
+                }
+
+                // If not admin, check if customer
+                string customerQuery = "SELECT [Id], [FirstName], [LastName], [Email], [PasswordHash] FROM [Customers] WHERE [Email] = @Email";
+                using (SqlCommand cmdCustomer = new SqlCommand(customerQuery, Con))
+                {
+                    cmdCustomer.Parameters.AddWithValue("@Email", email);
+                    using (SqlDataReader readerCustomer = cmdCustomer.ExecuteReader())
+                    {
+                        if (readerCustomer.Read())
+                        {
+                            string storedCustomerPasswordHash = readerCustomer["PasswordHash"].ToString();
+
+                            if (BCrypt.Net.BCrypt.Verify(password, storedCustomerPasswordHash))
                             {
                                 // Retrieve and set customer details
-                                int customerId = reader.GetInt32(reader.GetOrdinal("Id"));
-                                string firstName = reader["FirstName"].ToString();
-                                string lastName = reader["LastName"].ToString();
-                                string loggedInEmail = reader["Email"].ToString();
+                                int customerId = readerCustomer.GetInt32(readerCustomer.GetOrdinal("Id"));
+                                string firstName = readerCustomer["FirstName"].ToString();
+                                string lastName = readerCustomer["LastName"].ToString();
+                                string loggedInEmail = readerCustomer["Email"].ToString();
 
                                 // Set session details
                                 SessionManager.SetCustomerDetails(customerId.ToString(), firstName, lastName, loggedInEmail, false);
@@ -104,6 +121,13 @@ namespace ABC_Car_Traders
                     Con.Close();
                 }
             }
+        }
+
+
+        private void Adminbtn_Click(object sender, EventArgs e)
+        {
+            AddAdminForm addAdminForm = new AddAdminForm();
+            addAdminForm.Show();
         }
     }
 }
