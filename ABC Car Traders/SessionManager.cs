@@ -20,6 +20,7 @@ namespace ABC_Car_Traders
         public static string Email { get; set; }
         public static string Password { get; set; }
         public static int LoggedInCustomerId { get; set; }
+        public static string AdminID { get; private set; }
 
         // Method to set customer details after login
         public static void SetCustomerDetails(string customerID, string firstName, string lastName, string email, bool isAdmin)
@@ -29,8 +30,8 @@ namespace ABC_Car_Traders
             LastName = lastName;
             Email = email;
             Password = Password;
-            
-            
+            IsAdmin = isAdmin;
+
         }
 
         // Method to clear customer details on logout
@@ -42,6 +43,14 @@ namespace ABC_Car_Traders
             Email = null;
             Password = null;
             
+        }
+
+        public static void SetAdminDetails(string adminId, string email)
+        {
+            AdminID = adminId;
+            
+            LoggedInEmail = email;
+            IsAdmin = true;
         }
     }
 }

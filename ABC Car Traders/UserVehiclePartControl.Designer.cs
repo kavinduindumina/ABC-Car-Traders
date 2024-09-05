@@ -80,7 +80,7 @@
             partsLayoutPanel.AutoScroll = true;
             partsLayoutPanel.Location = new Point(50, 201);
             partsLayoutPanel.Name = "partsLayoutPanel";
-            partsLayoutPanel.Size = new Size(859, 352);
+            partsLayoutPanel.Size = new Size(925, 352);
             partsLayoutPanel.TabIndex = 5;
             // 
             // SearchButton
@@ -293,7 +293,7 @@
             Controls.Add(partsLayoutPanel);
             Controls.Add(guna2HtmlLabel1);
             Name = "UserVehiclePartControl";
-            Size = new Size(951, 556);
+            Size = new Size(978, 556);
             ((System.ComponentModel.ISupportInitialize)Pricetxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)Quantitytxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)PartImagePictureBox).EndInit();

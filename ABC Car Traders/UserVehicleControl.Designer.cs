@@ -80,7 +80,7 @@
             carLayoutPanel.AutoScroll = true;
             carLayoutPanel.Location = new Point(48, 184);
             carLayoutPanel.Name = "carLayoutPanel";
-            carLayoutPanel.Size = new Size(859, 369);
+            carLayoutPanel.Size = new Size(933, 369);
             carLayoutPanel.TabIndex = 4;
             // 
             // CarNametxt
@@ -293,7 +293,7 @@
             Controls.Add(carLayoutPanel);
             Controls.Add(guna2HtmlLabel1);
             Name = "UserVehicleControl";
-            Size = new Size(951, 556);
+            Size = new Size(997, 563);
             Load += UserVehicleControl_Load;
             ((System.ComponentModel.ISupportInitialize)PictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pricetxt).EndInit();

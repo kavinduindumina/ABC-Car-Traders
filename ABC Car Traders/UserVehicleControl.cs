@@ -11,6 +11,8 @@ namespace ABC_Car_Traders
         {
             InitializeComponent();
             LoadCarDetails();
+
+            Pricetxt.Maximum = 100000000;
         }
 
         private void LoadCarDetails()

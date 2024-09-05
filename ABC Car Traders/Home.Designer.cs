@@ -311,8 +311,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(950, 650);
-            Controls.Add(panel1);
             Controls.Add(userHomeControl1);
+            Controls.Add(panel1);
             Controls.Add(userVehiclePartControl1);
             Controls.Add(userVehicleControl2);
             FormBorderStyle = FormBorderStyle.None;

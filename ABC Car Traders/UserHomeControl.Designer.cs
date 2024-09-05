@@ -44,7 +44,7 @@
             // 
             flowLayoutPanel1.Location = new Point(32, 62);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(859, 295);
+            flowLayoutPanel1.Size = new Size(899, 295);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -71,7 +71,7 @@
             // 
             flowLayoutPanel2.Location = new Point(32, 408);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(859, 295);
+            flowLayoutPanel2.Size = new Size(899, 295);
             flowLayoutPanel2.TabIndex = 6;
             flowLayoutPanel2.Paint += flowLayoutPanel2_Paint;
             // 
@@ -125,7 +125,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(flowLayoutPanel2);
             Name = "UserHomeControl";
-            Size = new Size(815, 390);
+            Size = new Size(949, 729);
             ResumeLayout(false);
             PerformLayout();
         }
